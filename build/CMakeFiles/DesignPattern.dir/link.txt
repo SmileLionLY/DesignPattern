@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -std=c++11 -O3  -shared -Wl,-soname,libDesignPattern.so -o libDesignPattern.so CMakeFiles/DesignPattern.dir/src/linux/SimpleFactory.cpp.o  -L/home/liuyi/workspace/DesignPatternCPlusPlus/library/linux -lpthread -Wl,-rpath,/home/liuyi/workspace/DesignPatternCPlusPlus/library/linux 
