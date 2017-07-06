@@ -1,5 +1,6 @@
 #include "Prototype.h"  
 #include <iostream>  
+#include <memory>
 
 ConcreatePrototype1::ConcreatePrototype1()  
 {  
@@ -17,9 +18,9 @@ ConcreatePrototype1::ConcreatePrototype1(const ConcreatePrototype1&)
 	std::cout << "copy construction of ConcreatePrototype1\n";  
 }  
 
-Prototype* ConcreatePrototype1::Clone()  
+std::shared_ptr<Prototype> ConcreatePrototype1::Clone()  
 {  
-	return new ConcreatePrototype1(*this);  
+	return std::shared_ptr<Prototype>(new ConcreatePrototype1(*this));  
 }  
 
 
@@ -40,7 +41,7 @@ ConcreatePrototype2::ConcreatePrototype2(const ConcreatePrototype2&)
 	std::cout << "copy construction of ConcreatePrototype2\n";  
 }  
 
-Prototype* ConcreatePrototype2::Clone()  
+std::shared_ptr<Prototype> ConcreatePrototype2::Clone()  
 {  
-	return new ConcreatePrototype2(*this);  
+	return std::shared_ptr<Prototype>(new ConcreatePrototype2(*this));  
 }  

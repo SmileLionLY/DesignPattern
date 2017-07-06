@@ -1,13 +1,15 @@
 #ifndef PROTOTYPE_H  
 #define PROTOTYPE_H  
 
+#include <memory>
+
 class Prototype  
 {  
 	public:  
 		Prototype(){}  
 		virtual ~Prototype(){}  
 
-		virtual Prototype *Clone() = 0;  
+		virtual std::shared_ptr<Prototype> Clone() = 0;  
 };  
 
 
@@ -19,8 +21,8 @@ class ConcreatePrototype1:public Prototype
 		ConcreatePrototype1();  
 		ConcreatePrototype1(const ConcreatePrototype1&);  
 		~ConcreatePrototype1();  
-
-		virtual Prototype* Clone();  
+		
+        virtual std::shared_ptr<Prototype> Clone();  
 };  
 
 // 派生自Prototype,实现Clone方法  
@@ -31,7 +33,7 @@ class ConcreatePrototype2:public Prototype
 		ConcreatePrototype2(const ConcreatePrototype2&);  
 		 ~ConcreatePrototype2();  
 
-		virtual Prototype* Clone();  
+        virtual std::shared_ptr<Prototype> Clone();  
 };  
 
 #endif  
